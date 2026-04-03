@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Digital Marketer & Community Manager</title>
+<meta name="description" content="Digital Marketer, Social Media Manager et Expert en Communication Stratégique. Je transforme votre présence en ligne en levier de croissance réel et mesurable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1a1a2e;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ===== CSS VARIABLES ===== */
+:root {
+  --brand:    #1a3a6b;
+  --brand2:   #0e7c6b;
+  --accent:   #e8a020;
+  --light:    #f5f7fb;
+  --lighter:  #eef6f4;
+  --text:     #1a1a2e;
+  --muted:    #5a6577;
+  --border:   #e2e8f0;
+  --radius:   14px;
+  --radius-sm: 8px;
+  --shadow:   0 4px 24px rgba(26,58,107,0.08);
+  --shadow-lg: 0 12px 48px rgba(26,58,107,0.14);
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, .font-display { font-family: 'Syne', sans-serif; }
+
+/* ===== NAVIGATION ===== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  color: var(--brand);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--brand2); }
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.3px;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--brand2); }
+.nav-cta {
+  background: var(--brand);
+  color: white !important;
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  transition: background .2s !important;
+}
+.nav-cta:hover { background: var(--brand2) !important; color: white !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { width: 22px; height: 2px; background: var(--brand); border-radius: 2px; transition: .3s; }
+
+/* ===== HERO ===== */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 2rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 4rem;
+  align-items: center;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--lighter);
+  color: var(--brand2);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.3px;
+}
+.hero-badge::before {
+  content: '';
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--brand2);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  color: var(--text);
+  margin-bottom: 1.2rem;
+}
+.hero h1 .hl {
+  color: var(--brand2);
+  position: relative;
+}
+.hero-sub {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin-bottom: 2.2rem;
+  max-width: 480px;
+}
+.hero-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.btn-primary {
+  background: var(--brand);
+  color: white;
+  padding: 13px 28px;
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background .2s, transform .15s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--brand2); transform: translateY(-1px); }
+.btn-outline {
+  background: transparent;
+  color: var(--brand);
+  padding: 13px 28px;
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1.5px solid var(--brand);
+  transition: all .2s;
+  display: inline-block;
+}
+.btn-outline:hover { background: var(--brand); color: white; }
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid var(--border);
+}
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--brand2);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.hero-photo-wrap {
+  position: relative;
+  width: 340px;
+}
+.hero-photo-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, var(--lighter) 0%, #d4f0e8 100%);
+  z-index: 0;
+}
+.hero-photo-wrap img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 20px;
+  border: 3px solid white;
+  box-shadow: var(--shadow-lg);
+}
+.hero-float-card {
+  position: absolute;
+  bottom: -16px;
+  left: -20px;
+  z-index: 2;
+  background: white;
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.float-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: var(--lighter);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.float-text { font-size: 12px; }
+.float-text strong { display: block; font-weight: 600; font-size: 14px; color: var(--brand2); }
+
+/* ===== SECTIONS ===== */
+.section { padding: 5rem 2rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--brand2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.6rem;
+}
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: var(--text);
+  margin-bottom: 0.8rem;
+  line-height: 1.15;
+}
+.section-sub {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 580px;
+  margin-bottom: 3rem;
+}
+.bg-light { background: var(--light); }
+
+/* ===== SLOGANS ===== */
+.slogans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+.slogan-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow .2s, transform .2s;
+}
+.slogan-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.slogan-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--brand2);
+}
+.slogan-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.slogan-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* ===== ABOUT ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 4rem;
+  align-items: start;
+}
+.about-text p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+.about-quote {
+  font-size: 17px;
+  font-style: italic;
+  color: var(--text);
+  border-left: 4px solid var(--brand2);
+  padding-left: 1.2rem;
+  margin: 2rem 0;
+  line-height: 1.6;
+}
+.skills-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  box-shadow: var(--shadow);
+}
+.skills-card h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--brand);
+  margin-bottom: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.skill-row { margin-bottom: 1.1rem; }
+.skill-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.skill-name { font-size: 13px; font-weight: 500; color: var(--text); }
+.skill-pct { font-size: 12px; color: var(--brand2); font-weight: 600; }
+.skill-bar-bg {
+  height: 5px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.skill-bar {
+  height: 5px;
+  background: linear-gradient(90deg, var(--brand2), var(--brand));
+  border-radius: 3px;
+  transition: width 1.5s ease;
+}
+.diplomas { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.diplomas h4 { margin-bottom: 0.8rem; }
+.diploma-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.diploma-tag {
+  font-size: 11px;
+  background: var(--lighter);
+  color: var(--brand2);
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* ===== SERVICES ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+.service-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  transition: box-shadow .2s, transform .2s, border-color .2s;
+}
+.service-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+  border-color: var(--brand2);
+}
+.service-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: var(--lighter);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  margin-bottom: 1.2rem;
+}
+.service-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+.service-card p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+.service-results {
+  font-size: 12px;
+  color: var(--brand2);
+  font-weight: 500;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+.service-tag {
+  font-size: 10px;
+  background: #e8eef8;
+  color: var(--brand);
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.3px;
+}
+
+/* ===== PROJETS ===== */
+.projects-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.project-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  transition: box-shadow .2s;
+}
+.project-card:hover { box-shadow: var(--shadow); }
+.project-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--border);
+  line-height: 1;
+}
+.project-type {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--brand2);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.project-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+.project-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+.project-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.meta-item { text-align: center; }
+.meta-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+.meta-val { font-size: 13px; font-weight: 600; color: var(--brand2); }
+.project-pills { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 0.8rem; }
+.pill {
+  font-size: 11px;
+  background: var(--lighter);
+  color: var(--brand2);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* ===== TESTIMONIALS ===== */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+.testi-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  transition: box-shadow .2s;
+}
+.testi-card:hover { box-shadow: var(--shadow); }
+.stars { color: var(--accent); font-size: 14px; letter-spacing: 2px; margin-bottom: 1rem; }
+.testi-quote {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 1.2rem;
+}
+.testi-quote::before { content: '\201C'; color: var(--brand2); font-size: 1.5em; font-weight: 700; line-height: 0; vertical-align: -0.3em; margin-right: 2px; }
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.testi-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.testi-name { font-size: 13px; font-weight: 600; color: var(--text); }
+.testi-role { font-size: 11px; color: var(--muted); }
+
+/* ===== CTA ===== */
+.cta-section {
+  background: var(--brand);
+  border-radius: 24px;
+  padding: 4rem 3rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+.cta-section::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -40px;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+.cta-section h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+.cta-section p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  max-width: 560px;
+  margin: 0 auto 2.2rem;
+  line-height: 1.75;
+}
+.cta-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; position: relative; z-index: 1; }
+.btn-white {
+  background: white;
+  color: var(--brand);
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .2s;
+  display: inline-block;
+}
+.btn-white:hover { background: var(--lighter); transform: translateY(-1px); }
+.btn-ghost {
+  background: transparent;
+  color: white;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  transition: all .2s;
+  display: inline-block;
+}
+.btn-ghost:hover { border-color: white; background: rgba(255,255,255,0.08); }
+
+/* ===== CONTACT ===== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.contact-info h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.8rem;
+}
+.contact-info p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+.contact-items { display: flex; flex-direction: column; gap: 12px; }
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: white;
+  transition: border-color .2s, box-shadow .2s;
+}
+.contact-item:hover { border-color: var(--brand2); box-shadow: 0 2px 12px rgba(14,124,107,0.1); }
+.contact-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--lighter);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.contact-label { font-size: 11px; color: var(--muted); }
+.contact-val { font-size: 14px; font-weight: 500; color: var(--text); }
+.social-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+}
+.social-card h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--brand);
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.social-post { margin-bottom: 1.2rem; padding-left: 12px; border-left: 3px solid var(--brand2); }
+.social-post:last-child { margin-bottom: 0; }
+.post-type { font-size: 10px; color: var(--brand2); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+.post-text { font-size: 12px; line-height: 1.6; color: var(--muted); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--text);
+  color: rgba(255,255,255,0.6);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+footer .footer-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 0.8rem;
+}
+footer .footer-logo span { color: var(--brand2); }
+footer p { font-size: 13px; line-height: 1.7; }
+footer .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem 0;
+  list-style: none;
+  flex-wrap: wrap;
+}
+footer .footer-links a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color .2s;
+}
+footer .footer-links a:hover { color: var(--brand2); }
+
+/* ===== SCROLL ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 1.5rem; }
+  .hero-visual { order: -1; }
+  .hero-photo-wrap { width: 260px; }
+  .hero-photo-wrap img { height: 300px; }
+  .hero-float-card { left: 0; bottom: -14px; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .slogans-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    gap: 1rem;
+    box-shadow: var(--shadow);
+  }
+  .hamburger { display: flex; }
+}
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .project-card { grid-template-columns: 1fr; }
+  .project-num { font-size: 2.5rem; }
+  .project-meta { grid-template-columns: 1fr; }
+  .hero-stats { gap: 1.5rem; }
+  .section { padding: 3rem 1.2rem; }
+  .cta-section { padding: 2.5rem 1.5rem; border-radius: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <a href="#accueil" class="nav-logo">Digital<span>Pro</span></a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#temoignages">Témoignages</a></li>
+    <li><a href="#contact" class="nav-cta">Me contacter</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="accueil" class="hero">
+  <div>
+    <div class="hero-badge">Disponible pour de nouveaux projets</div>
+    <h1>Votre <span class="hl">visibilité digitale</span>,<br>ma priorité.</h1>
+    <p class="hero-sub">Digital Marketer, Community Manager et Expert en Communication Stratégique. Je transforme votre présence en ligne en levier de croissance réel et mesurable.</p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">Voir mes services</a>
+      <a href="#contact" class="btn-outline">Me contacter</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Projets livrés</div>
+      </div>
+      <div>
+        <div class="stat-num">3×</div>
+        <div class="stat-label">ROI moyen généré</div>
+      </div>
+      <div>
+        <div class="stat-num">30+</div>
+        <div class="stat-label">Clients satisfaits</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-photo-wrap">
+      <!-- REMPLACEZ "photo.jpg" par le nom de votre photo -->
+      <img src="photo.jpg" alt="Photo professionnelle" onerror="this.style.background='linear-gradient(135deg,#1a3a6b,#0e7c6b)';this.style.display='block'">
+      <div class="hero-float-card">
+        <div class="float-icon">📈</div>
+        <div class="float-text">
+          <strong>+250%</strong>
+          Croissance moyenne clients
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SLOGANS ===== -->
+<section class="section bg-light">
+  <div class="section-inner">
+    <div class="section-tag">Positionnement</div>
+    <h2 class="section-title">Ce qui me distingue en 3 phrases</h2>
+    <div class="slogans-grid reveal">
+      <div class="slogan-card">
+        <div class="slogan-num">01</div>
+        <p class="slogan-text">"Stratégie digitale. Impact communautaire. Résultats concrets."</p>
+      </div>
+      <div class="slogan-card">
+        <div class="slogan-num">02</div>
+        <p class="slogan-text">"Je ne vends pas du contenu. Je construis votre autorité."</p>
+      </div>
+      <div class="slogan-card">
+        <div class="slogan-num">03</div>
+        <p class="slogan-text">"Du digital qui parle à vos clients — et qui les convainc."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== À PROPOS ===== -->
+<section id="apropos" class="section">
+  <div class="section-inner">
+    <div class="section-tag">À propos</div>
+    <h2 class="section-title">Un profil rare. Une approche complète.</h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Professionnel du marketing digital et de la communication stratégique, diplômé en <strong>Communication</strong> et en <strong>Développement Communautaire</strong>. J'aide les entreprises, ONG et organisations à construire une présence digitale forte, cohérente et orientée résultats.</p>
+        <blockquote class="about-quote">
+          "Je ne me contente pas de gérer des pages. Je crée des ponts entre votre marque et vos communautés — en ligne et sur le terrain."
+        </blockquote>
+        <p>Avec une formation solide complétée par des compétences en création de sites web, j'ai développé une vision à 360° du marketing digital. J'ai travaillé sur des projets variés : campagnes de sensibilisation pour des ONG, stratégies de contenu pour des PME, création de sites web fonctionnels et gestion de communautés digitales actives.</p>
+        <p>Ce qui me distingue : je comprends non seulement les outils digitaux, mais aussi les dynamiques humaines et communautaires. Je sais comment une marque doit parler à des publics diversifiés — y compris dans des contextes de développement et d'impact social.</p>
+        <div style="margin-top: 2rem;">
+          <a href="#contact" class="btn-primary">Travaillons ensemble</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="skills-card">
+          <h4>Compétences principales</h4>
+          <div class="skill-row">
+            <div class="skill-top"><span class="skill-name">Communication Stratégique</span><span class="skill-pct">92%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width:92%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-top"><span class="skill-name">Marketing Digital</span><span class="skill-pct">90%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width:90%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-top"><span class="skill-name">Social Media Management</span><span class="skill-pct">88%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width:88%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-top"><span class="skill-name">Création de sites web</span><span class="skill-pct">80%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width:80%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-top"><span class="skill-name">Développement Communautaire</span><span class="skill-pct">88%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width:88%"></div></div>
+          </div>
+        </div>
+        <div class="skills-card diplomas" style="margin-top:1rem">
+          <h4>Diplômes & Formations</h4>
+          <div class="diploma-tags">
+            <span class="diploma-tag">Licence en Communication</span>
+            <span class="diploma-tag">Licence en Développement Communautaire</span>
+            <span class="diploma-tag">Création de sites web</span>
+            <span class="diploma-tag">Marketing Digital</span>
+            <span class="diploma-tag">Social Media Strategy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="section bg-light">
+  <div class="section-inner">
+    <div class="section-tag">Services</div>
+    <h2 class="section-title">Ce que je fais — et comment ça change tout.</h2>
+    <p class="section-sub">Chaque service est pensé pour produire des résultats mesurables. Pas de stratégie vague. Des actions ciblées, des résultats réels.</p>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-tag">Stratégie & Growth</div>
+        <div class="service-icon">📣</div>
+        <h3>Marketing Digital</h3>
+        <p>Élaboration et exécution de stratégies digitales complètes : SEO, publicités payantes (Meta Ads, Google Ads), emailing et automatisation.</p>
+        <div class="service-results">→ Résultat : +ROI mesurable dès le 1er mois</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-tag">Engagement & Communauté</div>
+        <div class="service-icon">📱</div>
+        <h3>Social Media Management</h3>
+        <p>Gestion complète de vos réseaux sociaux. Calendrier éditorial, création de contenu, modération, reporting mensuel et croissance organique.</p>
+        <div class="service-results">→ Résultat : Communauté engagée et croissante</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-tag">Web & Présence en ligne</div>
+        <div class="service-icon">💻</div>
+        <h3>Création de site web</h3>
+        <p>Sites vitrines et landing pages professionnels, rapides, optimisés SEO et adaptés à vos objectifs de conversion.</p>
+        <div class="service-results">→ Résultat : Site livré en 2–3 semaines</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-tag">Contenu & Branding</div>
+        <div class="service-icon">🎯</div>
+        <h3>Stratégie de contenu</h3>
+        <p>Création de contenu persuasif (textes, visuels, vidéos courtes) aligné avec votre identité de marque et vos objectifs commerciaux.</p>
+        <div class="service-results">→ Résultat : Autorité de marque renforcée</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-tag">Impact Social</div>
+        <div class="service-icon">🌍</div>
+        <h3>Communication ONG & Impact</h3>
+        <p>Stratégies de communication pour organisations à impact : sensibilisation, mobilisation communautaire, rapports d'impact, storytelling.</p>
+        <div class="service-results">→ Résultat : Visibilité et crédibilité accrues</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-tag">Analyse & Optimisation</div>
+        <div class="service-icon">📊</div>
+        <h3>Audit & Conseil Digital</h3>
+        <p>Analyse complète de votre présence digitale actuelle, identification des opportunités et feuille de route d'amélioration personnalisée.</p>
+        <div class="service-results">→ Résultat : Plan d'action clair et actionnable</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJETS ===== -->
+<section id="projets" class="section">
+  <div class="section-inner">
+    <div class="section-tag">Portfolio</div>
+    <h2 class="section-title">Projets réalisés. Résultats prouvés.</h2>
+    <p class="section-sub">Chaque projet raconte une transformation. Voici comment j'ai aidé des organisations à atteindre leurs objectifs grâce au digital.</p>
+    <div class="projects-list">
+
+      <div class="project-card reveal">
+        <div class="project-num">01</div>
+        <div>
+          <div class="project-type">ONG — Santé Communautaire</div>
+          <h3>Campagne digitale de sensibilisation au paludisme</h3>
+          <div class="project-pills">
+            <span class="pill">Meta Ads</span>
+            <span class="pill">Contenu en créole & français</span>
+            <span class="pill">Influenceurs locaux</span>
+            <span class="pill">Facebook</span>
+          </div>
+          <p class="project-desc">Une ONG de santé cherchait à toucher les communautés rurales via le digital pour sa campagne de prévention. Stratégie : création d'une série de contenus bilingues, campagne Meta Ads ciblée géographiquement, partenariats avec des influenceurs locaux et gestion d'une page Facebook dédiée.</p>
+          <div class="project-meta">
+            <div class="meta-item"><div class="meta-label">Personnes touchées</div><div class="meta-val">12 000+</div></div>
+            <div class="meta-item"><div class="meta-label">Taux d'engagement</div><div class="meta-val">8,4%</div></div>
+            <div class="meta-item"><div class="meta-label">Coût par résultat</div><div class="meta-val">−40%</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-num">02</div>
+        <div>
+          <div class="project-type">PME — Commerce Local</div>
+          <h3>Refonte digitale d'une boutique de mode locale</h3>
+          <div class="project-pills">
+            <span class="pill">Instagram</span>
+            <span class="pill">WhatsApp Business</span>
+            <span class="pill">Site e-commerce</span>
+            <span class="pill">Identité visuelle</span>
+          </div>
+          <p class="project-desc">Boutique sans présence en ligne significative et chiffre d'affaires stagnant. Stratégie : création d'identité visuelle, développement d'un site e-commerce simple, stratégie de contenu Instagram, stories régulières et catalogue WhatsApp Business automatisé.</p>
+          <div class="project-meta">
+            <div class="meta-item"><div class="meta-label">Ventes générées</div><div class="meta-val">+250%</div></div>
+            <div class="meta-item"><div class="meta-label">Abonnés Instagram</div><div class="meta-val">1 800</div></div>
+            <div class="meta-item"><div class="meta-label">Délai de livraison</div><div class="meta-val">3 semaines</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-num">03</div>
+        <div>
+          <div class="project-type">Formation — Éducation</div>
+          <h3>Stratégie d'acquisition pour un centre de formation</h3>
+          <div class="project-pills">
+            <span class="pill">Landing page</span>
+            <span class="pill">Email automation</span>
+            <span class="pill">Google Ads</span>
+            <span class="pill">Posts sponsorisés</span>
+          </div>
+          <p class="project-desc">Centre de formation cherchant à remplir ses sessions avec un budget limité. Stratégie : landing page de conversion, séquence d'emailing automatisée, Google Ads et posts sponsorisés ciblant les 20–35 ans en reconversion professionnelle.</p>
+          <div class="project-meta">
+            <div class="meta-item"><div class="meta-label">Inscriptions (T1)</div><div class="meta-val">63</div></div>
+            <div class="meta-item"><div class="meta-label">Coût par lead</div><div class="meta-val">4 USD</div></div>
+            <div class="meta-item"><div class="meta-label">Taux conversion LP</div><div class="meta-val">18%</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-num">04</div>
+        <div>
+          <div class="project-type">Institution — Gouvernance locale</div>
+          <h3>Communication digitale pour un programme de développement</h3>
+          <div class="project-pills">
+            <span class="pill">Site institutionnel</span>
+            <span class="pill">LinkedIn</span>
+            <span class="pill">Newsletter</span>
+            <span class="pill">Rapport d'impact digital</span>
+          </div>
+          <p class="project-desc">Programme de développement communautaire nécessitant une visibilité pour attirer partenaires et bailleurs. Stratégie : site web institutionnel, rapports d'impact en format digital, newsletter mensuelle et présence LinkedIn active avec personal branding.</p>
+          <div class="project-meta">
+            <div class="meta-item"><div class="meta-label">Délai lancement</div><div class="meta-val">4 semaines</div></div>
+            <div class="meta-item"><div class="meta-label">Partenaires via LinkedIn</div><div class="meta-val">2 signés</div></div>
+            <div class="meta-item"><div class="meta-label">Taux ouverture NL</div><div class="meta-val">38%</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== TÉMOIGNAGES ===== -->
+<section id="temoignages" class="section bg-light">
+  <div class="section-inner">
+    <div class="section-tag">Témoignages</div>
+    <h2 class="section-title">Ce que disent mes clients.</h2>
+    <p class="section-sub">La satisfaction de mes clients est ma meilleure carte de visite.</p>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">Grâce à sa stratégie de contenu et sa gestion de nos réseaux, notre ONG a multiplié par 4 son audience en seulement deux mois. Professionnel, fiable et vraiment à l'écoute de nos besoins spécifiques.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#e8f4f0;color:#0e7c6b;">MJ</div>
+          <div><div class="testi-name">Marie-Josée Duval</div><div class="testi-role">Coordinatrice, ONG SantéHaïti</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">Il a créé notre site web et géré notre communication digitale. Résultat : nous avons attiré nos premiers partenaires internationaux via LinkedIn. Ce que j'apprécie le plus : il comprend les enjeux au-delà du digital.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#e8eef8;color:#1a3a6b;">RP</div>
+          <div><div class="testi-name">Rodnelson Pierre</div><div class="testi-role">Directeur, Centre DEVCO</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">Notre boutique était invisible en ligne. Aujourd'hui, Instagram et WhatsApp génèrent 60% de nos ventes. Son approche stratégique et son sens du business ont tout changé pour nous.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#fdf3e0;color:#85500b;">CL</div>
+          <div><div class="testi-name">Chloé Laurent</div><div class="testi-role">Gérante, Boutique Éclat Mode</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">La campagne de sensibilisation qu'il a menée pour nous a dépassé tous nos objectifs. Il comprend les réalités locales et sait comment communiquer efficacement dans notre contexte communautaire.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#f4eafd;color:#6b27a0;">BM</div>
+          <div><div class="testi-name">Berlande Morancy</div><div class="testi-role">Responsable Communication, ONG VieSaine</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="section">
+  <div class="section-inner">
+    <div class="cta-section reveal">
+      <h2>Prêt à passer au niveau supérieur ?</h2>
+      <p>Que vous soyez une entreprise, une ONG ou une organisation en croissance — discutons de votre projet. Une consultation gratuite de 30 minutes pour comprendre vos besoins et vous proposer la meilleure stratégie.</p>
+      <div class="cta-btns">
+        <a href="#contact" class="btn-white">Réserver ma consultation gratuite</a>
+        <a href="#services" class="btn-ghost">Voir mes offres</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section bg-light">
+  <div class="section-inner">
+    <div class="section-tag">Contact</div>
+    <h2 class="section-title">Travaillons ensemble.</h2>
+    <div class="contact-grid">
+      <div class="reveal">
+        <h3>Vous avez un projet ? Parlons-en.</h3>
+        <p>Disponible pour des collaborations à court ou long terme. Je réponds généralement dans les 24h.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <!-- REMPLACEZ par votre email -->
+              <div class="contact-val">votre.email@gmail.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div>
+              <div class="contact-label">WhatsApp</div>
+              <!-- REMPLACEZ par votre numéro -->
+              <div class="contact-val">+509 XXXX XXXX</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🔗</div>
+            <div>
+              <div class="contact-label">LinkedIn</div>
+              <!-- REMPLACEZ par votre profil -->
+              <div class="contact-val">linkedin.com/in/votre-profil</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">Localisation</div>
+              <div class="contact-val">Haïti — Disponible à distance</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="social-card">
+          <h4>Idées de contenu — Réseaux sociaux</h4>
+          <div class="social-post">
+            <div class="post-type">LinkedIn — Expertise</div>
+            <div class="post-text">"3 erreurs que font les ONG sur les réseaux sociaux (et comment les éviter)" → Démontre votre expertise terrain.</div>
+          </div>
+          <div class="social-post">
+            <div class="post-type">Instagram — Résultats</div>
+            <div class="post-text">Avant/après : captures d'écran de résultats clients avec chiffres clés → Preuve sociale visuelle puissante.</div>
+          </div>
+          <div class="social-post">
+            <div class="post-type">Facebook — Éducation</div>
+            <div class="post-text">"5 outils gratuits pour gérer vos réseaux sociaux comme un pro" → Contenu utile qui attire des clients.</div>
+          </div>
+          <div class="social-post">
+            <div class="post-type">WhatsApp Broadcast</div>
+            <div class="post-text">Newsletter hebdo "Digital Insight" : 1 astuce actionnable chaque lundi → Fidélisation et top of mind.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-logo">Digital<span>Pro</span></div>
+  <ul class="footer-links">
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#temoignages">Témoignages</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <p>Digital Marketer · Community Manager · Expert en Communication Stratégique</p>
+  <p style="margin-top:0.5rem;font-size:12px;opacity:0.5">Haïti — Disponible à distance · © 2025 Tous droits réservés</p>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+/* ---- Menu hamburger ---- */
+function toggleMenu() {
+  document.getElementById('nav-links').classList.toggle('open');
+}
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('nav-links').classList.remove('open');
+  });
+});
+
+/* ---- Scroll reveal ---- */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ---- Smooth active nav ---- */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--brand2)' : '';
+  });
+});
+</script>
+</body>
+</html>
